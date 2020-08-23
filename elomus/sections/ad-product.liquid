@@ -1,0 +1,188 @@
+<div class="main-row {% if section.settings.fullwidth == true %}full-width{% endif  %} {% if section.settings.background == true %} layer-background {% endif  %} {% if section.settings.top_margin %} margin-top{% endif %}" data-section-id="{{ section.id }}">
+  <div class="container">
+    <div class="row">
+      <div class="main-col col-sm-12 col-md-12">
+        <div class="row sub-row">
+          <div class="sub-col col-sm-12 col-md-12">
+            {% include section.settings.product_advert_design %}
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>    
+<style>
+  {% if section.settings.background_color != settings.section_bg_color -%}
+  #shopify-section-{{section.id }} .layer-background {
+    background: {{ section.settings.background_color }};
+  }
+  {%- endif %}
+</style>
+{% schema %}
+{
+  "name": "Ad Product section",
+  "class": "index-section index-section--flush",
+  "settings": [
+    {
+    "type": "select",
+    "id": "product_advert_design",
+    "label": "Select Design",
+    "options": [
+	  {
+        "value": "product-advert1",
+        "label": "Design 1"
+      },
+	  {
+        "value": "product-advert2",
+        "label": "Design 2"
+      },
+	  {
+        "value": "product-advert2alt",
+        "label": "Design 2 Alt - 50/50"
+      },
+	  {
+        "value": "product-advert3",
+        "label": "Design 3"
+      },
+      {
+      "value": "product-advert4",
+      "label": "Design 4"
+      },
+      {
+      "value": "product-advert4alt",
+      "label": "Design 4 Alt"
+      },
+      {
+      "value": "product-advert4alt2",
+      "label": "Design 4 Alt2"
+      },
+      {
+      "value": "product-advert5",
+      "label": "Design 5"
+      },
+      {
+      "value": "product-advert6",
+      "label": "Design 6"
+      }
+    ],
+    "default": "product-advert1"
+    },
+	{
+      "type": "image_picker",
+      "id": "bg-image",
+      "label": "Image",
+      "info": "ad image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "info": "Not applied on full image layouts",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+	{
+      "type": "text",
+      "id": "subheading",
+      "label": "SubHeading",
+      "info": "Mostly appears on top of main heading in small fonts"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Price",
+      "info": "Used in Design2 layouts"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text_2",
+      "label": "Button 2 Text"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Button 2 URL"
+    },
+    {
+      "type": "select",
+      "id": "ad_align",
+      "label": "Align",
+      "options": [
+        {
+        "value": "left",
+        "label": "left"
+        },
+        {
+        "value": "center",
+        "label": "center"
+        },
+        {
+        "value": "right",
+        "label": "right"
+        }
+       ],
+      "default": "left",
+	  "info": "Used in design2, design3 and design 5"
+    },
+	{
+      "type": "checkbox",
+      "id": "fullwidth",
+      "label": "Set Div fullwidth?",
+      "default": true
+    },
+	{
+      "type": "checkbox",
+      "id": "background",
+      "label": "Add Background",
+      "default": false
+    },
+    {
+    "type": "color",
+    "id": "background_color",
+    "label": "Sections Background Color",
+    "info": "This option allows you to set different background color than default one for the section.",
+    "default": "#f8f8f8"
+    },
+    {
+      "type": "checkbox",
+      "id": "top_margin",
+      "label": "Add top margin?",
+      "info": "White empty space above section",
+      "default": false
+    }
+  ],
+  "presets": [{
+    "name": "Ad product section",
+    "category": "Image"
+  }]
+}
+{% endschema %}

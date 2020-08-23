@@ -1,0 +1,19 @@
+<div class="static2-elomus4">
+  <div class="module-title">
+    {% if section.settings.subheading != blank %}  
+    <p class="sub-title">{{ section.settings.subheading }}</p>
+    {% endif %}
+    {% if section.settings.heading != blank %}  
+    <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+  </div>
+  {% if section.settings.description != blank %} 
+  <p>{{ section.settings.description }}</p>
+  {% endif %}
+  {% if section.settings.link_text != blank %} 
+  <a href="{{ section.settings.link }}" class="">{{ section.settings.link_text }}</a>
+  {% endif %}
+  {% if section.settings.link_text_2 != blank %} 
+  <a href="{{ section.settings.link_2 }}" class="">{{ section.settings.link_text_2 }}</a>
+  {% endif %}
+</div>
